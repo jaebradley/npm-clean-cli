@@ -5,6 +5,8 @@
 
 # npm-clean-cli
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/npm-clean-cli.svg)](https://greenkeeper.io/)
+
 ## Introduction
 There are times when you're working in an `npm` project and you'd like to start "fresh", from a dependency point of view i.e.<sup>1</sup>
 
