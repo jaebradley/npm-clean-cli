@@ -2,10 +2,9 @@
 [![codecov](https://codecov.io/gh/jaebradley/npm-clean-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/jaebradley/npm-clean-cli)
 [![npm](https://img.shields.io/npm/v/npm-clean-cli.svg)](https://github.com/jaebradley/npm-clean-cli)
 [![npm](https://img.shields.io/npm/dt/npm-clean-cli.svg)](https://github.com/jaebradley/npm-clean-cli)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/npm-clean-cli.svg)](https://greenkeeper.io/)
 
 # npm-clean-cli
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/jaebradley/npm-clean-cli.svg)](https://greenkeeper.io/)
 
 ## Introduction
 There are times when you're working in an `npm` project and you'd like to start "fresh", from a dependency point of view i.e.<sup>1</sup>
