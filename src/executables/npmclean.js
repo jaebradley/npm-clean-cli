@@ -13,4 +13,4 @@ program
   .description('Clean NPM')
   .parse(process.argv);
 
-clean().catch(error => console.error(error));
+clean().catch(error => console.error(`🔥  Unexpected error: ${error}`));
