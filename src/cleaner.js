@@ -22,8 +22,14 @@ const cleaner = () => (
           .then(() => console.log('✅  Installed npm packages'));
       }
 
-      console.log('💣  No package.json found, so no cleaning will occur 💣');
+      console.log('💣  No package.json file found, so no cleaning will occur 💣');
       return null;
+    }).catch((e) => {
+      if (e.code === 'ENOENT') {
+        console.log('💣  No package.json file found, so no cleaning will occur 💣');
+      } else {
+        throw e;
+      }
     })
 );
 

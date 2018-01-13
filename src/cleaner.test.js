@@ -19,7 +19,7 @@ describe('cleaner', () => {
   const clearedNpmCacheMessage = '✅  Cleared npm cache';
   const installingNpmPackagesMessage = '💥  Installing npm packages 💥';
   const installedNpmPackagesMessage = '✅  Installed npm packages';
-  const noPackageJsonFoundMessage = '💣  No package.json found, so no cleaning will occur 💣';
+  const noPackageJsonFoundMessage = '💣  No package.json file found, so no cleaning will occur 💣';
 
   beforeEach(() => {
     consoleLogSpy = jest.spyOn(global.console, 'log');
@@ -44,15 +44,18 @@ describe('cleaner', () => {
         isFileMock.mockRestore();
       });
 
-      it('should not clean if stat throws', async () => {
+      it('should handle ENOENT stat error', async () => {
         const error = new Error('stat error');
+        error.code = 'ENOENT';
+
         statSpy = jest.spyOn(fse, 'stat').mockReturnValue(Promise.reject(error));
 
         try {
           await cleaner();
         } catch (e) {
           expect(e).toEqual(error);
-          expect(consoleLogSpy).not.toHaveBeenCalled();
+          expect(consoleLogSpy).not.toHaveBeenCalledTimes(1);
+          expect(consoleLogSpy).toHaveBeenCalledWith(noPackageJsonFoundMessage);
         }
 
         statSpy.mockRestore();
