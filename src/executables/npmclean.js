@@ -6,11 +6,11 @@ import program from 'commander';
 
 import pkg from '../../package.json';
 
-import { clean } from '../cleaner';
+import cleaner from '../cleaner';
 
 program
   .version(pkg.version)
   .description('Clean NPM')
   .parse(process.argv);
 
-clean().catch(error => console.error(`🔥  Unexpected error: ${error}`));
+cleaner().catch(error => console.error(`🔥  Unexpected error: ${error}`));
