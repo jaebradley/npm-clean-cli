@@ -55,7 +55,7 @@
     "chalk": "^2.3.0",
     "child-process-promise": "^2.2.1",
     "commander": "^2.13.0",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^6.0.0",
     "inquirer": "^5.0.0",
     "rimraf-promise": "^2.0.0"
   }
